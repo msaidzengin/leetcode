@@ -1,10 +1,25 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        dic, res, start, = {}, 0, 0
-        for i, ch in enumerate(s):
-            if ch in dic:
-                res = max(res, i-start)
-                start = max(start, dic[ch]+1) 
-            dic[ch] = i
-        return max(res, len(s)-start) 
         
+        start_index = 0
+        maxLength = 0
+        usedChar = {}
+        
+        for i in range(len(s)):
+            if s[i] in usedChar and start_index <= usedChar[s[i]]:
+                start_index = usedChar[s[i]] + 1
+            else:
+                maxLength = max(maxLength, i - start_index + 1)
+            usedChar[s[i]] = i
+
+
+            print(usedChar)
+            print(maxLength)
+
+        return maxLength
+
+    def run(self):
+        print(self.lengthOfLongestSubstring("abcabcbb"))
+    
+sol = Solution()
+sol.run()
