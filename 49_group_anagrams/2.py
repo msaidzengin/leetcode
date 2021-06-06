@@ -1,12 +1,11 @@
+import collections
 class Solution:
     def groupAnagrams(self, strs):
-        dic = {}
-        for str in strs:
-            key = ''.join(sorted(str))
-            if key in dic:
-                dic.get(key).append(str)
-            else:
-                dic[key] = [str]
+        dic = collections.defaultdict(list)
+        for st in strs:
+            s = ''.join(sorted(st))
+            dic[s].append(st)
+
         return dic.values()
 
     def run(self):
