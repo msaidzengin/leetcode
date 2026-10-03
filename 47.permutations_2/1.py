@@ -1,6 +1,11 @@
+from collections import Counter
+from typing import List
+
+
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
         results = []
+
         def backtrack(comb, counter):
             if len(comb) == len(nums):
                 # make a deep copy of the resulting permutation,

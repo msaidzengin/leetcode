@@ -4,4 +4,5 @@ def metod(n):
         return
     metod(n - 1)
 
+
 metod(5)

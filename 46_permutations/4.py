@@ -4,7 +4,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        
         res = [[]]
         for num in nums:
             new_res = []

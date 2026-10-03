@@ -3,4 +3,5 @@ def reverse(metin):
         return ""
     return metin[-1] + reverse(metin[:-1])
 
+
 print(reverse("merhaba"))

@@ -9,14 +9,15 @@ class Solution:
             return [[]]
         res = []
         for i in range(n):
-            for p in self.permute(nums[:i] + nums[i+1:]):
+            for p in self.permute(nums[:i] + nums[i + 1 :]):
                 res.append([nums[i]] + p)
         return res
 
     def run(self):
-        nums = [1,2,3]
+        nums = [1, 2, 3]
         cvp = self.permute(nums)
         print(cvp)
+
 
 if __name__ == "__main__":
     sol = Solution()
